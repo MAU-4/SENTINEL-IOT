@@ -1,0 +1,27 @@
+# Interfaz donde escucha dnsmasq
+interface=wlan1
+
+# Rango de IPs a asignar
+dhcp-range=192.168.50.50,192.168.50.150,255.255.255.0,24h
+
+# Gateway (la Raspberry Pi)
+dhcp-option=3,192.168.50.1
+
+# DNS servers
+dhcp-option=6,8.8.8.8,8.8.4.4
+
+# No leer /etc/resolv.conf
+no-resolv
+
+# Servidor DNS upstream
+server=8.8.8.8
+server=8.8.4.4
+
+# No reenviar consultas sin dominio
+domain-needed
+
+# No reenviar direcciones privadas
+bogus-priv
+
+# Archivo de leases
+dhcp-leasefile=/var/lib/misc/dnsmasq.leases
