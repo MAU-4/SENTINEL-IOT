@@ -1,0 +1,20 @@
+nov 13 15:11:00 raspberrypi systemd[1]: sentinel-backend.service: Deactivated successfully.
+nov 13 15:11:00 raspberrypi systemd[1]: Stopped sentinel-backend.service - SENTINEL IoT Backend Service.
+nov 13 15:11:00 raspberrypi systemd[1]: sentinel-backend.service: Consumed 5.504s CPU time.
+nov 13 15:11:00 raspberrypi systemd[1]: Started sentinel-backend.service - SENTINEL IoT Backend Service.
+nov 13 15:11:07 raspberrypi uvicorn[1772]: INFO:     Started server process [1772]
+nov 13 15:11:07 raspberrypi uvicorn[1772]: INFO:     Waiting for application startup.
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,720 - app.main - INFO - Iniciando SENTINEL IoT v2.0 v2.0.0
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,723 - app.services.firewall_manager - ERROR - Error al inicializar firewall: [Errno 2] No such file or directory: 'nft'
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,724 - app.main - ERROR - Error al inicializar firewall
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,737 - app.services.device_manager - WARNING - Archivo de leases no encontrado: /var/lib/misc/dnsmasq.leases
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,740 - app.services.device_manager - ERROR - Error inesperado: [Errno 2] No such file or directory: 'ip'
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,742 - app.services.device_manager - ERROR - Error al escanear con nmap: [Errno 2] No such file or directory: 'which'
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,743 - app.services.device_manager - INFO - Escaneados 0 dispositivos
+nov 13 15:11:07 raspberrypi uvicorn[1772]: 2025-11-13 15:11:07,743 - app.main - INFO - Detectados 0 dispositivos
+nov 13 15:11:07 raspberrypi uvicorn[1772]: INFO:     Application startup complete.
+nov 13 15:11:07 raspberrypi uvicorn[1772]: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+nov 13 15:11:35 raspberrypi uvicorn[1772]: INFO:     127.0.0.1:37824 - "GET / HTTP/1.1" 200 OK
+nov 13 15:11:36 raspberrypi uvicorn[1772]: INFO:     127.0.0.1:37838 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+nov 13 15:11:49 raspberrypi uvicorn[1772]: INFO:     127.0.0.1:50684 - "GET / HTTP/1.1" 200 OK
+nov 13 15:11:50 raspberrypi uvicorn[1772]: INFO:     127.0.0.1:50700 - "GET /favicon.ico HTTP/1.1" 404 Not Found
