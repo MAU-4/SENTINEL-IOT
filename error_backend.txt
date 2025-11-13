@@ -1,0 +1,100 @@
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     return future.result()
+nov 13 14:48:08 raspberrypi uvicorn[3668]:            ~~~~~~~~~~~~~^^
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     await self._serve(sockets)
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     config.load()
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     ~~~~~~~~~~~^^
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     self.loaded_app = import_from_string(self.app)
+nov 13 14:48:08 raspberrypi uvicorn[3668]:                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/importer.py", line 22, in import_from_string
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     raise exc from None
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     module = importlib.import_module(module_str)
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     return _bootstrap._gcd_import(name[level:], package, level)
+nov 13 14:48:08 raspberrypi uvicorn[3668]:            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/backend/app/main.py", line 13, in <module>
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     from .core.config import settings
+nov 13 14:48:08 raspberrypi uvicorn[3668]:   File "/opt/sentinel-iot/backend/app/core/config.py", line 5, in <module>
+nov 13 14:48:08 raspberrypi uvicorn[3668]:     from pydantic_settings import BaseSettings
+nov 13 14:48:08 raspberrypi uvicorn[3668]: ModuleNotFoundError: No module named 'pydantic_settings'
+nov 13 14:48:08 raspberrypi systemd[1]: sentinel-backend.service: Main process exited, code=exited, status=1/FAILURE
+nov 13 14:48:08 raspberrypi systemd[1]: sentinel-backend.service: Failed with result 'exit-code'.
+nov 13 14:48:08 raspberrypi systemd[1]: sentinel-backend.service: Consumed 3.293s CPU time.
+nov 13 14:48:18 raspberrypi systemd[1]: sentinel-backend.service: Scheduled restart job, restart counter is at 16.
+nov 13 14:48:18 raspberrypi systemd[1]: Started sentinel-backend.service - SENTINEL IoT Backend Service.
+nov 13 14:48:21 raspberrypi uvicorn[3672]: Traceback (most recent call last):
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/bin/uvicorn", line 7, in <module>
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     sys.exit(main())
+nov 13 14:48:21 raspberrypi uvicorn[3672]:              ~~~~^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/click/core.py", line 1462, in __call__
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return self.main(*args, **kwargs)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~^^^^^^^^^^^^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/click/core.py", line 1383, in main
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     rv = self.invoke(ctx)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/click/core.py", line 1246, in invoke
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return ctx.invoke(self.callback, **ctx.params)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/click/core.py", line 814, in invoke
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return callback(*args, **kwargs)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/main.py", line 423, in main
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     run(
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     ~~~^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:         app,
+nov 13 14:48:21 raspberrypi uvicorn[3672]:         ^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     ...<46 lines>...
+nov 13 14:48:21 raspberrypi uvicorn[3672]:         h11_max_incomplete_event_size=h11_max_incomplete_event_size,
+nov 13 14:48:21 raspberrypi uvicorn[3672]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     )
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     ^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/main.py", line 593, in run
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     server.run()
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     ~~~~~~~~~~^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/server.py", line 67, in run
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return runner.run(main)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~~^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return self._loop.run_until_complete(task)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return future.result()
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~~~~~^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/server.py", line 71, in serve
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     await self._serve(sockets)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/server.py", line 78, in _serve
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     config.load()
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     ~~~~~~~~~~~^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/config.py", line 439, in load
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     self.loaded_app = import_from_string(self.app)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/importer.py", line 22, in import_from_string
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     raise exc from None
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/venv/lib/python3.13/site-packages/uvicorn/importer.py", line 19, in import_from_string
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     module = importlib.import_module(module_str)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     return _bootstrap._gcd_import(name[level:], package, level)
+nov 13 14:48:21 raspberrypi uvicorn[3672]:            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/backend/app/main.py", line 13, in <module>
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     from .core.config import settings
+nov 13 14:48:21 raspberrypi uvicorn[3672]:   File "/opt/sentinel-iot/backend/app/core/config.py", line 5, in <module>
+nov 13 14:48:21 raspberrypi uvicorn[3672]:     from pydantic_settings import BaseSettings
+nov 13 14:48:21 raspberrypi uvicorn[3672]: ModuleNotFoundError: No module named 'pydantic_settings'
+nov 13 14:48:22 raspberrypi systemd[1]: sentinel-backend.service: Main process exited, code=exited, status=1/FAILURE
+nov 13 14:48:22 raspberrypi systemd[1]: sentinel-backend.service: Failed with result 'exit-code'.
+nov 13 14:48:22 raspberrypi systemd[1]: sentinel-backend.service: Consumed 3.577s CPU time.
